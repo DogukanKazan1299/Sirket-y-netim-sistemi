@@ -1,0 +1,57 @@
+﻿@model IEnumerable<WebApplication39.Models.Depo>
+
+@{
+    ViewData["Title"] = "Index";
+}
+<link href="~/twitter-bootstrap/css/bootstrap.css" rel="stylesheet" />
+
+<h3 style="margin-left:300px">DEPO SAYFASI</h3>
+<br />
+<br />
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.UrunAdi)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DepoNo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DepoAdres)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Id)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.UrunAdi)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DepoNo)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DepoAdres)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.Id }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+
+<a class="btn btn-info" href="/Depo/Create/" role="button">DEPO EKLE</a>
